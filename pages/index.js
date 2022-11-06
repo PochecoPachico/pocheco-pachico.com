@@ -1,23 +1,26 @@
 import Link from "next/link";
 import { client } from "../libs/client";
+import styles from '../styles/Home.module.scss';
+import Header from '../components/header';
+import Card from '../components/card';
 
 export default function Home({ blog }) {
   return (
-    <div>
-      <ul>
+    <main className={styles.main}>
+      <Header></Header>
+      <div class="row">
         {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
-          </li>
+          <div className={`${styles.cardContainer}` + ' col'} key={blog.id}>
+            <Card blog={blog}></Card>
+          </div>
         ))}
-      </ul>
-    </div>
+      </div>
+    </main>
   );
 }
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
-
   return {
     props: {
       blog: data.contents,
