@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { client } from "../libs/client";
 import styles from '../styles/Home.module.scss';
 import Header from '../components/header';
@@ -8,7 +7,7 @@ export default function Home({ blog }) {
   return (
     <main className={styles.main}>
       <Header></Header>
-      <div class="row">
+      <div className="row">
         {blog.map((blog) => (
           <div className={`${styles.cardContainer}` + ' col'} key={blog.id}>
             <Card blog={blog}></Card>

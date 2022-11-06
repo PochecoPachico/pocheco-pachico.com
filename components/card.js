@@ -14,7 +14,7 @@ export default function Card({ blog }) {
           </div>
           <div className='d-flex' style={{justifyContent: 'space-between', marginTop: '1rem'}}>
             <p className="card-subtitle">{blog.category.name}</p>
-            <time className="card-text" datetime={blog.publishedAt}>{blog.publishedAt}</time>
+            <time className="card-text" dateTime={blog.publishedAt}>{blog.publishedAt}</time>
           </div>
         </div>
       </Link>
