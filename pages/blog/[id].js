@@ -1,10 +1,12 @@
 import { client } from "../../libs/client";
 import styles from '../../styles/Page.module.scss';
+import Common from '../../components/common'
 import Header from '../../components/header';
 
 export default function BlogId({ blog }) {
   return (
     <main className={styles.main}>
+      <Common title={`${blog.title}：田んぼ`} />
       <Header></Header>
       <div className={styles.content}>
         <div className='d-flex' style={{justifyContent: 'center', margin: '1rem 0'}}>

@@ -14,7 +14,7 @@ export default function Header() {
             <div className="navbar-nav">
               <Link href={'/'} className="nav-link active" aria-current="page">Home</Link>
               <Link href={'/'} className="nav-link">Posts</Link>
-              <Link href={'/'} className="nav-link">Profile</Link>
+              <Link href={'/profile'} className="nav-link">Profile</Link>
             </div>
           </div>
         </div>

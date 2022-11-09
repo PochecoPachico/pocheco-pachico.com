@@ -1,11 +1,13 @@
 import { client } from "../libs/client";
 import styles from '../styles/Home.module.scss';
+import Common from '../components/common'
 import Header from '../components/header';
 import Card from '../components/card';
 
 export default function Home({ blog }) {
   return (
     <main className={styles.main}>
+      <Common title="田んぼ"/>
       <Header></Header>
       <div className="row">
         {blog.map((blog) => (
