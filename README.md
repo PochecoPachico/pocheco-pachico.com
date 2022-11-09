@@ -10,6 +10,17 @@ npm run dev
 yarn dev
 ```
 
+#### Using docker
+
+```bash
+# Set up
+docker build -t pocheco-pachico . \
+&& docker run --rm -v $(pwd):/app -p 3000:3000 --name dev pocheco-pachico npm install
+
+# Start server
+docker run --rm -it -v $(pwd):/app -p 3000:3000 --name dev pocheco-pachico npm run dev
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
