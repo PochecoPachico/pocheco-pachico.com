@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from '../styles/Card.module.scss';
+import Date from './date';
 
 export default function Card({ blog }) {
   return (
@@ -14,7 +15,7 @@ export default function Card({ blog }) {
           </div>
           <div className='d-flex' style={{justifyContent: 'space-between', marginTop: '1rem'}}>
             <p className="card-subtitle">{blog.category.name}</p>
-            <time className="card-text" dateTime={blog.publishedAt}>{blog.publishedAt}</time>
+            <Date date = {blog.publishedAt} classname = {"card-text"} />
           </div>
         </div>
       </Link>

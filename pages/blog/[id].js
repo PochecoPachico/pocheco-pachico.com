@@ -2,6 +2,7 @@ import { client } from "../../libs/client";
 import styles from '../../styles/Page.module.scss';
 import Common from '../../components/common'
 import Header from '../../components/header';
+import Date from '../../components/date';
 
 export default function BlogId({ blog }) {
   return (
@@ -12,7 +13,9 @@ export default function BlogId({ blog }) {
         <div className='d-flex' style={{justifyContent: 'center', margin: '1rem 0'}}>
           <h1 className={styles.title}>{blog.title}</h1>
         </div>
-        <div className='d-flex' style={{justifyContent: 'right', margin: '1rem 0'}}><p className={styles.publishedAt}>{blog.publishedAt}</p></div>
+        <div className='d-flex' style={{justifyContent: 'right', margin: '1rem 0'}}>
+          <Date date={blog.publishedAt} classname = {styles.publishedAt} />
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: `${blog.body}`,
