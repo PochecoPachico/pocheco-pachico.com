@@ -7,7 +7,7 @@ import Date from '../../components/date';
 export default function BlogId({ blog }) {
   return (
     <main className={styles.main}>
-      <Common title={`${blog.title}：田んぼ`} />
+      <Common title={`${blog.title} | 田んぼ`} />
       <Header></Header>
       <div className={styles.content}>
         <div className='d-flex' style={{justifyContent: 'center', margin: '1rem 0'}}>
