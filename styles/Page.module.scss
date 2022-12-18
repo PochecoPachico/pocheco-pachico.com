@@ -36,6 +36,9 @@
   & > p {
     line-height: 1.8;
     letter-spacing: 0.2px;
+    & > img {
+      width: 50rem;
+    }
   }
 
   & > ol {
