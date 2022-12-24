@@ -6,7 +6,7 @@ import Card from '../components/card';
 
 export default function Home({ blog }) {
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}` + ' container'}>
       <Common title="田んぼ"/>
       <Header></Header>
       <div className="row">

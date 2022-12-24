@@ -1,5 +1,4 @@
 .main {
-  width: 960px;
   margin: 0 auto;
 }
 
@@ -12,7 +11,6 @@
 }
 
 .content {
-  width: 50rem;
   margin: 0 auto;
 }
 
@@ -37,7 +35,8 @@
     line-height: 1.8;
     letter-spacing: 0.2px;
     & > img {
-      width: 50rem;
+      width: 80%;
+      text-align: center;
     }
   }
 

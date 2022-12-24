@@ -6,7 +6,7 @@ import Date from '../../components/date';
 
 export default function BlogId({ blog }) {
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}` + ' container'}>
       <Common title={`${blog.title} | 田んぼ`} />
       <Header></Header>
       <div className={styles.content}>
@@ -14,7 +14,7 @@ export default function BlogId({ blog }) {
           <h1 className={styles.title}>{blog.title}</h1>
         </div>
         <div className='d-flex' style={{justifyContent: 'right', margin: '1rem 0'}}>
-          <Date date={blog.publishedAt} classname = {styles.publishedAt} />
+          <Date date={blog.publishedAt} classname={styles.publishedAt} />
         </div>
         <div
           dangerouslySetInnerHTML={{
