@@ -11,7 +11,7 @@ export default function Home({ blog }) {
       <Header></Header>
       <div className="row">
         {blog.map((blog) => (
-          <div className={`${styles.cardContainer}` + ' col'} key={blog.id}>
+          <div className={`${styles.cardContainer}` + ' col-sm-6'} key={blog.id}>
             <Card blog={blog}></Card>
           </div>
         ))}
