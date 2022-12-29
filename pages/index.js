@@ -1,7 +1,8 @@
 import { client } from "../libs/client";
 import styles from '../styles/Home.module.scss';
-import Common from '../components/common'
+import Common from '../components/common';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import Card from '../components/card';
 
 export default function Home({ blog }) {
@@ -16,6 +17,7 @@ export default function Home({ blog }) {
           </div>
         ))}
       </div>
+      <Footer></Footer>
     </main>
   );
 }

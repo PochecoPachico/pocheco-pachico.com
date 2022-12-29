@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.scss';
-import Common from '../components/common'
+import Common from '../components/common';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 export default function Profile() {
   return (
@@ -8,6 +9,7 @@ export default function Profile() {
       <Common />
       <Header></Header>
       <p>今頑張って作っています。</p>
+      <Footer></Footer>
     </main>
   );
 }

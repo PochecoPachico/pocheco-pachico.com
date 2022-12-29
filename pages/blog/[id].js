@@ -2,6 +2,7 @@ import { client } from "../../libs/client";
 import styles from '../../styles/Page.module.scss';
 import Common from '../../components/common'
 import Header from '../../components/header';
+import Footer from '../../components/footer';
 import Date from '../../components/date';
 
 export default function BlogId({ blog }) {
@@ -23,6 +24,7 @@ export default function BlogId({ blog }) {
           className={styles.post}
         />
       </div>
+      <Footer></Footer>
     </main>
   );
 }
