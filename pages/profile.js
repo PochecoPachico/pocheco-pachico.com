@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 
 export default function Profile() {
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}` + ' container'}>
       <Common />
       <Header></Header>
       <p>今頑張って作っています。</p>
