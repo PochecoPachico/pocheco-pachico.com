@@ -15,12 +15,12 @@ export default function Profile() {
           <img src='/kaeru.jpg' width='200' height='200' className={ `${styles.icon} d-block mx-auto` } alt='icon' />
         </div>
 
-        <div className='center-block'>
-          <h1 className={'d-block mx-auto'}>ぽちぇこ</h1>
+        <div className="row justify-content-md-center">
+          <h1 className={'col-md-auto'}>ぽちぇこ</h1>
         </div>
 
         <div className="row justify-content-md-center">
-          <div className={'col col-md-1'}>
+          <div className={'col-md-1'}>
             Twitter
           </div>
           <div className={'col-lg-auto'}>
@@ -28,7 +28,7 @@ export default function Profile() {
           </div>
         </div>
         <div className="row justify-content-md-center">
-          <div className={'col col-md-1'}>
+          <div className={'col-md-1'}>
             GitHub
           </div>
           <div className={'col-lg-auto'}>
@@ -36,7 +36,7 @@ export default function Profile() {
           </div>
         </div>
         <div className="row justify-content-md-center">
-          <div className={'col col-md-1'}>
+          <div className={'col-md-1'}>
             twitch
           </div>
           <div className={'col-lg-auto'}>
