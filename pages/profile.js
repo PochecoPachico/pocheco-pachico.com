@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from "next/link";
 import styles from '../styles/Profile.module.scss';
 import Common from '../components/common';
@@ -13,7 +12,7 @@ export default function Profile() {
       <div className={styles.content}>
       
         <div>
-          <Image src='/kaeru.jpg' width={200} height={200} className={ `${styles.icon} d-block mx-auto` } alt='icon' />
+          <img src='/kaeru.jpg' width='200' height='200' className={ `${styles.icon} d-block mx-auto` } alt='icon' />
         </div>
 
         <div className='center-block'>
