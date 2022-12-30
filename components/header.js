@@ -1,24 +1,24 @@
-import Link from "next/link";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import styles from '../styles/Header.module.scss';
 
-export default function Header() {
+export default function Header({current=""}) {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-dark">
-        <div className="container-fluid">
-          <Link href={'/'} className="navbar-brand">田んぼ</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <Link href={'/'} className="nav-link active" aria-current="page">Home</Link>
-              <Link href={'/'} className="nav-link">Posts</Link>
-              <Link href={'/profile'} className="nav-link">Profile</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="/">田んぼ</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/" className={`${current === 'home' ? 'active' : ''}`}>Home</Nav.Link>
+              {/* <Nav.Link href="/" className={`${current === 'posts' ? 'active' : ''}`}>Posts</Nav.Link> */}
+              <Nav.Link href="/profile" className={`${current === 'profile' ? 'active' : ''}`}>Profile</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   )
 }
