@@ -1,6 +1,10 @@
 import Head from 'next/head'
 
-export default function Common({ title = "田んぼ" }) {
+interface CommonProps {
+  title?: string;
+}
+
+export default function Common({ title = "田んぼ" }: CommonProps) {
   let description = "WEB開発、IT技術、ランニング、たまにゲームに関する技術を書いていきます。"
   return (
     <Head>
@@ -13,4 +17,4 @@ export default function Common({ title = "田んぼ" }) {
       {/* <meta name="twitter:card" content="summary_large_image"/> */}
     </Head>
   )
-}
+} 

@@ -4,8 +4,20 @@ import Common from '../../components/common'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Date from '../../components/date';
+import type { GetStaticProps, GetStaticPaths } from 'next';
 
-export default function BlogId({ blog }) {
+interface Blog {
+  id: string;
+  title: string;
+  body: string;
+  publishedAt: string;
+}
+
+interface BlogIdProps {
+  blog: Blog;
+}
+
+export default function BlogId({ blog }: BlogIdProps) {
   return (
     <main className={`${styles.main}` + ' container'}>
       <Common title={`${blog.title} | 田んぼ`} />
@@ -29,15 +41,15 @@ export default function BlogId({ blog }) {
   );
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: Blog) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const id = context.params?.id as string;
   const data = await client.get({ endpoint: "blog", contentId: id });
 
   return {
@@ -45,4 +57,4 @@ export const getStaticProps = async (context) => {
       blog: data,
     },
   };
-};
+}; 
