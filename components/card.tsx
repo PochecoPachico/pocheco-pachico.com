@@ -2,7 +2,20 @@ import Link from "next/link";
 import styles from '../styles/Card.module.scss';
 import Date from './date';
 
-export default function Card({ blog }) {
+interface Blog {
+  id: string;
+  title: string;
+  publishedAt: string;
+  category: {
+    name: string;
+  };
+}
+
+interface CardProps {
+  blog: Blog;
+}
+
+export default function Card({ blog }: CardProps) {
   return (
     <div className={`${styles.card}` + ' card'}>
       <Link href={`/blog/${blog.id}`}>
@@ -21,4 +34,4 @@ export default function Card({ blog }) {
       </Link>
     </div>
   )
-}
+} 

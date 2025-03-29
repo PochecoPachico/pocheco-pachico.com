@@ -4,8 +4,22 @@ import Common from '../components/common';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Card from '../components/card';
+import type { GetStaticProps } from 'next';
 
-export default function Home({ blog }) {
+interface Blog {
+  id: string;
+  title: string;
+  publishedAt: string;
+  category: {
+    name: string;
+  };
+}
+
+interface HomeProps {
+  blog: Blog[];
+}
+
+export default function Home({ blog = [] }: HomeProps) {
   return (
     <main className={`${styles.main} container`}>
       <Common title="田んぼ"/>
@@ -22,11 +36,20 @@ export default function Home({ blog }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
-  return {
-    props: {
-      blog: data.contents,
-    },
-  };
-};
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  try {
+    const data = await client.get({ endpoint: "blog" });
+    return {
+      props: {
+        blog: data.contents || [],
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching blog data:', error);
+    return {
+      props: {
+        blog: [],
+      },
+    };
+  }
+}; 

@@ -3,8 +3,9 @@ import styles from '../styles/Profile.module.scss';
 import Common from '../components/common';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import type { NextPage } from 'next';
 
-export default function Profile() {
+const Profile: NextPage = () => {
   return (
     <main className={`${styles.main} container`}>
       <Common />
@@ -48,4 +49,5 @@ export default function Profile() {
     </main>
   );
 }
-  
+
+export default Profile; 
