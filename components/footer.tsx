@@ -1,7 +1,8 @@
 import Link from "next/link";
 import styles from '../styles/Footer.module.scss';
+import type { NextPage } from 'next';
 
-export default function Footer() {
+const Footer: NextPage = () => {
   return (
     <footer className={styles.footer}>
         <div className={styles.container}>
@@ -10,3 +11,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer; 
