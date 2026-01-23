@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Image from 'next/image';
 import styles from '../styles/Profile.module.scss';
 import Common from '../components/common';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import type { NextPage } from 'next';
 
-const Profile: NextPage = () => {
+export default function Profile() {
   return (
     <main className={`${styles.main} container`}>
       <Common />
@@ -14,7 +12,7 @@ const Profile: NextPage = () => {
       <div className={styles.content}>
       
         <div>
-          <Image src='/kaeru.jpg' width='200' height='200' className={ `${styles.icon} d-block mx-auto` } alt='icon' />
+          <img src='/kaeru.jpg' width='200' height='200' className={ `${styles.icon} d-block mx-auto` } alt='icon' />
         </div>
 
         <div className="row justify-content-md-center">
@@ -50,5 +48,4 @@ const Profile: NextPage = () => {
     </main>
   );
 }
-
-export default Profile; 
+  

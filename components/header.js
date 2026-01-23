@@ -3,11 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styles from '../styles/Header.module.scss';
 
-interface HeaderProps {
-  current?: string;
-}
-
-export default function Header({current=""}: HeaderProps) {
+export default function Header({current=""}) {
   return (
     <header>
       <Navbar variant="dark" expand="lg">
@@ -25,4 +21,4 @@ export default function Header({current=""}: HeaderProps) {
       </Navbar>
     </header>
   )
-} 
+}
