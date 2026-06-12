@@ -8,6 +8,7 @@ export default function Document(props: DocumentProps) {
       <body>
         <Main />
         <NextScript />
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </body>
     </Html>
   )

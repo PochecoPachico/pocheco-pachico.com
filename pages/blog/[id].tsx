@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { client } from "../../libs/client";
 import styles from '../../styles/Page.module.scss';
 import Common from '../../components/common'
@@ -5,6 +6,16 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Date from '../../components/date';
 import type { GetStaticProps, GetStaticPaths } from 'next';
+
+declare global {
+  interface Window {
+    twttr?: {
+      widgets: {
+        load: (element?: HTMLElement) => void;
+      };
+    };
+  }
+}
 
 interface Blog {
   id: string;
@@ -18,6 +29,10 @@ interface BlogIdProps {
 }
 
 export default function BlogId({ blog }: BlogIdProps) {
+  useEffect(() => {
+    window.twttr?.widgets.load();
+  }, [blog.id]);
+
   return (
     <main className={`${styles.main}` + ' container'}>
       <Common title={`${blog.title} | 田んぼ`} />
