@@ -1,15 +1,10 @@
 .main {
   margin: 0 auto;
+  max-width: 960px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .cardContainer {
-  padding: 10px;
-}
-
-.title {
-  margin-bottom: 20px;
-}
-
-.publishedAt {
-  margin-bottom: 40px;
+  padding: 0.75rem;
 }

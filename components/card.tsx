@@ -21,14 +21,14 @@ export default function Card({ blog }: CardProps) {
       <Link href={`/blog/${blog.id}`}>
         <div className="card-body">
           <div>
-            <span>pocheco-pachico.com</span>
+            <span className={styles.site}>pocheco-pachico.com</span>
           </div>
-          <div style={{marginTop: '1rem'}}>
-            <h5 className="card-title">{blog.title}</h5>
+          <div style={{marginTop: '0.75rem'}}>
+            <h5 className={`card-title ${styles.title}`}>{blog.title}</h5>
           </div>
-          <div className='d-flex' style={{justifyContent: 'space-between', marginTop: '1rem'}}>
-            <p className="card-subtitle">{blog.category.name}</p>
-            <Date date = {blog.publishedAt} classname = {"card-text"} />
+          <div className='d-flex' style={{justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem'}}>
+            <span className={styles.category}>{blog.category.name}</span>
+            <Date date = {blog.publishedAt} classname = {styles.date} />
           </div>
         </div>
       </Link>

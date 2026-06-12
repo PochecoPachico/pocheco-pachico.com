@@ -1,13 +1,19 @@
 .main {
   margin: 0 auto;
+  max-width: 760px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .title {
-  margin-bottom: 20px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .publishedAt {
-  margin-bottom: 40px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
 .content {
@@ -16,32 +22,100 @@
 
 .post {
   & > h1 {
-    font-size: 30px;
+    font-size: 1.6rem;
     font-weight: bold;
-    margin: 40px 0 20px;
-    background-color: #eee;
-    padding: 10px 20px;
-    border-radius: 5px;
+    margin: 2.5rem 0 1.25rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-surface);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
   }
 
   & > h2 {
-    font-size: 24px;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin: 40px 0 16px;
-    border-bottom: 1px solid #ddd;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
   & > p {
     line-height: 1.8;
     letter-spacing: 0.2px;
+
     & > img {
+      max-width: 100%;
       width: 80%;
-      text-align: center;
+      border-radius: var(--radius);
     }
   }
 
-  & > ol {
+  & img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+  }
+
+  & a {
+    color: var(--color-accent);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+
+  & blockquote {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.25rem;
+    border-left: 4px solid var(--color-border);
+    background: var(--color-surface);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--color-text-muted);
+  }
+
+  & code {
+    background: var(--color-surface);
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    font-size: 0.9em;
+  }
+
+  & pre {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    overflow-x: auto;
+
+    & code {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+
+    & th,
+    & td {
+      border: 1px solid var(--color-border);
+      padding: 0.5rem 0.75rem;
+    }
+
+    & th {
+      background: var(--color-surface);
+    }
+  }
+
+  & ol {
     list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+  & ul {
     list-style-position: inside;
   }
 }
