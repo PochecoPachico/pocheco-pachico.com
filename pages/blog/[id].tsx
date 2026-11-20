@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { client } from "../../libs/client";
+import { sanitizeBody } from "../../libs/sanitize";
 import styles from '../../styles/Page.module.scss';
 import Common from '../../components/common'
 import Header from '../../components/header';
@@ -46,7 +47,7 @@ export default function BlogId({ blog }: BlogIdProps) {
         </div>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
+            __html: blog.body,
           }}
           className={styles.post}
         />
@@ -69,7 +70,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      blog: data,
+      blog: { ...data, body: sanitizeBody(data.body ?? '') },
     },
   };
 }; 
